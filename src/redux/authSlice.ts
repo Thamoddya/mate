@@ -37,11 +37,16 @@ const authSlice = createSlice({
       state.password = action.payload;
       state.passwordLengthAcceptable = action.payload.length >= 8;
       // Example regex check for password requirements
-      const passwordRegex =  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/;
+      const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/;
       state.passwordContainData = passwordRegex.test(action.payload);
     },
     setEmail(state, action: PayloadAction<string>) {
       state.email = action.payload;
+    },
+    signIn(state) {
+      // Here you can add your sign in logic
+      console.log('Sign In');
+      console.log(state);
     },
   },
 });

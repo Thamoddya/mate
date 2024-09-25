@@ -6,6 +6,7 @@ import {
   StatusBar,
   StyleSheet,
   Text,
+  TouchableOpacity,
   View,
 } from 'react-native';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
@@ -67,6 +68,14 @@ const SignInScreen = () => {
             dispatch({type: 'auth/signIn'});
           }}
         />
+        <TouchableOpacity>
+          <Text style={[styles.subText, {textAlign: 'center', marginTop: 16}]}>
+            Don't have an account?{' '}
+            <Text style={{color: Colors.PRIMARY_WHITE, fontWeight: 'bold'}}>
+              Sign Up
+            </Text>
+          </Text>
+        </TouchableOpacity>
       </KeyboardAwareScrollView>
     </ImageBackground>
   );
