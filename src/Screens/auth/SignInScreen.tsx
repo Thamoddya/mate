@@ -14,6 +14,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import ThemedButton from '../../components/buttons/ThemeButton';
 import CustomTextInput from '../../components/inputs/CustomTextInput';
 import PasswordInputField from '../../components/inputs/PasswordInputField';
+import {AuthFunctions} from '../../functions/authFunctions';
 import {AppDispatch, RootState} from '../../store/store';
 import {TextStyles} from '../../styles/AppStyles';
 import {Colors} from '../../styles/Colors';
@@ -78,9 +79,7 @@ const SignInScreen: React.FC<SignInScreenProps> = ({navigation}) => {
         </View>
         <ThemedButton
           title="Sign In"
-          onPress={() => {
-            dispatch({type: 'auth/signIn'});
-          }}
+          onPress={() => AuthFunctions.signInProcess(navigation)}
         />
         <TouchableOpacity
           onPress={() => {
