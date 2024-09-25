@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   darkButton: {
-    backgroundColor: Colors.PRIMARY_BLACK,
+    backgroundColor: Colors.SUB_2,
   },
   lightButton: {
     backgroundColor: Colors.PRIMARY_WHITE,

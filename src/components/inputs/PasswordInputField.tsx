@@ -42,7 +42,7 @@ const PasswordInputField: FC<PasswordInputFieldProps> = ({
           onKeyPress={onKeyUp}
           style={[styles.textInputStyle, {paddingRight: 38}]}
           placeholder={placeholder}
-          placeholderTextColor="#9C9BC2"
+          placeholderTextColor="#888"
           onChangeText={onChangeText}
           value={value}
           secureTextEntry={isPasswordSecure}
@@ -71,11 +71,12 @@ const styles = StyleSheet.create({
     borderColor: '#ccc',
     borderWidth: 1,
     borderRadius: 8,
+    marginVertical: 8,
   },
   textInputStyle: {
     padding: 16,
     borderRadius: 8,
-    color: '#000',
+    color: Colors.PRIMARY_WHITE,
     flexGrow: 1,
   },
   iconButton: {
@@ -87,10 +88,10 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: Platform.OS === 'android' ? -10 : -8,
     left: 12,
-    backgroundColor: '#fff',
+    backgroundColor: Colors.PRIMARY_BLACK,
     paddingHorizontal: 4,
     fontSize: 14,
-    color: '#555',
+    color: Colors.PRIMARY_WHITE,
     zIndex: 1, // Ensure label is above the TextInput
   },
 });

@@ -14,7 +14,11 @@ import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {ScreenStyles, TextStyles} from '../../styles/AppStyles';
 import {Colors} from '../../styles/Colors';
 
-const OnboardScreen = () => {
+interface OnboardScreenProps {
+  navigation: any;
+}
+
+const OnboardScreen: React.FC<OnboardScreenProps> = ({navigation}) => {
   // MARK: - Refs
   const actionSheetRef = useRef<ActionSheetRef>(null);
   const insets = useSafeAreaInsets();
@@ -58,7 +62,11 @@ const OnboardScreen = () => {
             Sign up today and have access to all the features of the app.
           </Text>
           <View style={{flexGrow: 1}} />
-          <Pressable>
+          <Pressable
+            onPress={() => {
+              actionSheetRef.current?.hide();
+              navigation.navigate('SignIn');
+            }}>
             <Image
               style={[styles.btnImage]}
               source={require('../../assets/images/onboardBtn.png')}

@@ -11,4 +11,7 @@ export const Colors = {
   GRAY_600: '#767676',
   GRAY_700: '#57595B',
   GRAY_800: '#28292A',
+
+  SUB_1: '#F1C40F',
+  SUB_2: '#1C6D78',
 };

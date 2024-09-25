@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, TextInput, StyleSheet, Text, Platform} from 'react-native';
+import {Platform, StyleSheet, Text, TextInput, View} from 'react-native';
 import {Colors} from '../../styles/Colors';
 
 interface CustomTextInputProps {
@@ -42,10 +42,10 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: Platform.OS === 'android' ? -10 : -8,
     left: 12,
-    backgroundColor: '#fff',
+    backgroundColor: Colors.PRIMARY_BLACK,
     paddingHorizontal: 4,
     fontSize: 14,
-    color: '#555',
+    color: Colors.PRIMARY_WHITE,
     zIndex: 1, // Ensure label is above the TextInput
   },
   input: {
@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     paddingTop: Platform.OS === 'android' ? 12 : 14,
     paddingBottom: Platform.OS === 'android' ? 12 : 10,
-    color: Colors.PRIMARY_BLACK,
+    color: Colors.PRIMARY_WHITE,
     flexGrow: 1,
   },
 });
