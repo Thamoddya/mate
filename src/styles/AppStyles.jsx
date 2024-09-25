@@ -9,10 +9,10 @@ export const ScreenStyles = StyleSheet.create({
   subContainer: {
     padding: 16,
   },
-  HomeSubContainer:{
+  HomeSubContainer: {
     padding: 16,
     marginTop: 16,
-  }
+  },
 });
 
 export const SpaceStyles = StyleSheet.create({
@@ -29,57 +29,57 @@ export const SpaceStyles = StyleSheet.create({
 
 export const TextStyles = StyleSheet.create({
   H1: {
-    fontSize: 24, // Slightly reduced for better mobile fit
+    fontSize: 24,
     fontWeight: 'bold',
     color: '#000',
-    fontFamily: Fonts.HelveticaNowTextBold,
+    fontFamily: Fonts.SFProDisplayBold,
   },
   H2: {
-    fontSize: 22, // Slight adjustment for better readability
+    fontSize: 22,
     lineHeight: 28,
     color: '#000',
     fontWeight: '700',
-    letterSpacing: -0.3, // Adjusted for mobile clarity
-    fontFamily: Fonts.HelveticaNowTextBold,
+    letterSpacing: -0.3,
+    fontFamily: Fonts.SFProDisplayBold,
   },
   H3: {
-    fontSize: 18, // Better suited for sub-headings
+    fontSize: 18,
     lineHeight: 24,
     color: '#000',
     fontWeight: '500',
     letterSpacing: -0.3,
-    fontFamily: Fonts.HelveticaNowTextBold,
+    fontFamily: Fonts.SFProTextMedium,
   },
   H4: {
-    fontSize: 16, // Common size for smaller headings
+    fontSize: 16,
     fontWeight: 'normal',
     color: '#000',
-    fontFamily: Fonts.HelveticaNowTextBold,
+    fontFamily: Fonts.SFProTextRegular,
   },
   H5: {
-    fontSize: 14, // Often used for captions or labels
+    fontSize: 14,
     fontWeight: 'normal',
     color: '#000',
-    fontFamily: Fonts.HelveticaNowTextBold,
+    fontFamily: Fonts.SFProTextRegular,
   },
   H6: {
-    fontSize: 16, // Adjusted to align with H4
+    fontSize: 16,
     fontWeight: 'normal',
     color: '#000',
-    fontFamily: Fonts.HelveticaNowTextBold,
+    fontFamily: Fonts.SFProTextRegular,
   },
   H7: {
-    fontSize: 20, // Better suited for secondary headings
+    fontSize: 20,
     fontWeight: '700',
     color: '#000',
-    fontFamily: Fonts.HelveticaNowTextBold,
+    fontFamily: Fonts.SFProDisplayBold,
   },
   P: {
-    fontSize: 14, // Standard paragraph size
+    fontSize: 14,
     fontWeight: 'normal',
     color: '#000',
-    fontFamily: Fonts.HelveticaNowTextRegular,
-    lineHeight: 20, // Added for better text readability
+    fontFamily: Fonts.SFProTextRegular,
+    lineHeight: 20,
   },
 });
 
