@@ -1,7 +1,8 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {Home2} from 'iconsax-react-native';
+import {Home2, Profile} from 'iconsax-react-native';
 import React from 'react';
 import HomeScreen from '../Screens/home/HomeScreen';
+import ProfileScreen from '../Screens/home/ProfileScreen';
 import {Colors} from '../styles/Colors';
 import {AppNavigationParams} from '../types/commonNavigationParams';
 
@@ -40,6 +41,20 @@ const MainTabNavigator = () => {
           tabBarLabel: 'Home',
           tabBarIcon: ({color, size, focused}) => (
             <Home2
+              size={size}
+              color={color}
+              variant={focused ? 'Bold' : 'Outline'}
+            />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Profile"
+        component={ProfileScreen}
+        options={{
+          tabBarLabel: 'Profile',
+          tabBarIcon: ({color, size, focused}) => (
+            <Profile
               size={size}
               color={color}
               variant={focused ? 'Bold' : 'Outline'}

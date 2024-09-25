@@ -13,6 +13,7 @@ export type AuthNavigationParams = {
 
 export type AppNavigationRoutes = {
   Home: undefined;
+  Profile: undefined;
 };
 export type AppNavigationParams = CommonNavigationParams &
   AuthNavigationParams &
