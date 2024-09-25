@@ -1,10 +1,10 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useRef} from 'react';
 import {
+  Animated,
   Platform,
   SafeAreaView,
   StatusBar,
   StyleSheet,
-  Text,
 } from 'react-native';
 
 import {TextStyles} from '../../styles/AppStyles';
@@ -13,16 +13,23 @@ import {Colors} from '../../styles/Colors';
 interface SplashScreenProps {
   navigation: any;
 }
+
 const SplashScreen: React.FC<SplashScreenProps> = ({navigation}) => {
   const isLogged = false;
+  const fadeAnim = useRef(new Animated.Value(0)).current;
 
-  //MARK: useEffect
   useEffect(() => {
     StatusBar.setBarStyle('dark-content', true);
-    Platform.OS === 'android' &&
+    if (Platform.OS == 'android') {
       StatusBar.setBackgroundColor(Colors.PRIMARY_BLACK);
-    setTimeout(() => {
-      //MARK: Navigation
+    }
+    Animated.timing(fadeAnim, {
+      toValue: 1,
+      duration: 1500,
+      useNativeDriver: true,
+    }).start();
+
+    const timeout = setTimeout(() => {
       if (isLogged) {
         navigation.navigate('BottomTabNavigation');
       } else {
@@ -32,10 +39,15 @@ const SplashScreen: React.FC<SplashScreenProps> = ({navigation}) => {
         // });
       }
     }, 3000);
-  }, []);
+
+    return () => clearTimeout(timeout);
+  }, [fadeAnim, navigation]);
+
   return (
-    <SafeAreaView style={[styles.container]}>
-      <Text style={[styles.splashText]}>MATE</Text>
+    <SafeAreaView style={styles.container}>
+      <Animated.Text style={[styles.splashText, {opacity: fadeAnim}]}>
+        Mate
+      </Animated.Text>
     </SafeAreaView>
   );
 };
