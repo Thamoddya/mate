@@ -1,5 +1,5 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {Home} from 'iconsax-react-native';
+import {Home2} from 'iconsax-react-native';
 import React from 'react';
 import HomeScreen from '../Screens/home/HomeScreen';
 import {Colors} from '../styles/Colors';
@@ -8,11 +8,11 @@ import {AppNavigationParams} from '../types/commonNavigationParams';
 const Tab = createBottomTabNavigator<AppNavigationParams>();
 
 const tabBarOptions = {
-  tabBarActiveTintColor: Colors.PRIMARY_BLACK,
+  tabBarActiveTintColor: Colors.PRIMARY_WHITE,
   tabBarInactiveTintColor: Colors.GRAY_500,
   tabBarShowLabel: true,
   tabBarStyle: {
-    backgroundColor: Colors.PRIMARY_WHITE,
+    backgroundColor: Colors.PRIMARY_BLACK,
     borderTopWidth: 0.5,
     elevation: 0,
     shadowOpacity: 0,
@@ -38,8 +38,12 @@ const MainTabNavigator = () => {
         component={HomeScreen}
         options={{
           tabBarLabel: 'Home',
-          tabBarIcon: ({color, size}) => (
-            <Home size={size} color={color} variant="Outline" />
+          tabBarIcon: ({color, size, focused}) => (
+            <Home2
+              size={size}
+              color={color}
+              variant={focused ? 'Bold' : 'Outline'}
+            />
           ),
         }}
       />

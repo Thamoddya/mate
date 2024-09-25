@@ -48,7 +48,6 @@ const authSlice = createSlice({
     setConfirmPassword(state, action: PayloadAction<string>) {
       state.confirmPassword = action.payload;
     },
-    signIn(state) {},
   },
 });
 
@@ -59,7 +58,6 @@ export const {
   setPassword,
   setEmail,
   setConfirmPassword,
-  signIn,
 } = authSlice.actions;
 
 export default authSlice.reducer;
