@@ -1,11 +1,9 @@
-import React, {act} from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {Home} from 'iconsax-react-native';
+import React from 'react';
 import HomeScreen from '../Screens/home/HomeScreen';
-import {AppNavigationParams} from '../types/commonNavigationParams';
-import {GlobalSearch, Heart, Home} from 'iconsax-react-native';
 import {Colors} from '../styles/Colors';
-import FavouritesScreen from '../Screens/home/FavouritesScreen';
-import ExploreProductesScreen from '../Screens/home/ExploreProductesScreen';
+import {AppNavigationParams} from '../types/commonNavigationParams';
 
 const Tab = createBottomTabNavigator<AppNavigationParams>();
 
@@ -34,34 +32,14 @@ const tabBarOptions = {
 
 const MainTabNavigator = () => {
   return (
-    <Tab.Navigator screenOptions={tabBarOptions} initialRouteName="Dashboard">
+    <Tab.Navigator screenOptions={tabBarOptions} initialRouteName="Home">
       <Tab.Screen
-        name="Dashboard"
+        name="Home"
         component={HomeScreen}
         options={{
           tabBarLabel: 'Home',
           tabBarIcon: ({color, size}) => (
             <Home size={size} color={color} variant="Outline" />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="ExploreProductes"
-        component={ExploreProductesScreen}
-        options={{
-          tabBarLabel: 'Explore',
-          tabBarIcon: ({color, size}) => (
-            <GlobalSearch size={size} color={color} variant="Outline" />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="Favourites"
-        component={FavouritesScreen}
-        options={{
-          tabBarLabel: 'Favourites',
-          tabBarIcon: ({color, size}) => (
-            <Heart size={size} color={color} variant="Outline" />
           ),
         }}
       />
