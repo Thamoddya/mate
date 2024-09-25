@@ -1,10 +1,11 @@
 import {Dimensions, StyleSheet} from 'react-native';
+import {Colors} from './Colors';
 import {Fonts} from './fonts';
 
 export const ScreenStyles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFF',
+    backgroundColor: Colors.PRIMARY_BLACK,
   },
   subContainer: {
     padding: 16,
@@ -29,15 +30,15 @@ export const SpaceStyles = StyleSheet.create({
 
 export const TextStyles = StyleSheet.create({
   H1: {
-    fontSize: 24,
+    fontSize: 32,
     fontWeight: 'bold',
-    color: '#000',
+    color: '#FFF',
     fontFamily: Fonts.SFProDisplayBold,
   },
   H2: {
     fontSize: 22,
     lineHeight: 28,
-    color: '#000',
+    color: '#FFF',
     fontWeight: '700',
     letterSpacing: -0.3,
     fontFamily: Fonts.SFProDisplayBold,
@@ -45,7 +46,7 @@ export const TextStyles = StyleSheet.create({
   H3: {
     fontSize: 18,
     lineHeight: 24,
-    color: '#000',
+    color: '#FFF',
     fontWeight: '500',
     letterSpacing: -0.3,
     fontFamily: Fonts.SFProTextMedium,
@@ -53,31 +54,31 @@ export const TextStyles = StyleSheet.create({
   H4: {
     fontSize: 16,
     fontWeight: 'normal',
-    color: '#000',
+    color: '#FFF',
     fontFamily: Fonts.SFProTextRegular,
   },
   H5: {
     fontSize: 14,
     fontWeight: 'normal',
-    color: '#000',
+    color: '#FFF',
     fontFamily: Fonts.SFProTextRegular,
   },
   H6: {
     fontSize: 16,
     fontWeight: 'normal',
-    color: '#000',
+    color: '#FFF',
     fontFamily: Fonts.SFProTextRegular,
   },
   H7: {
     fontSize: 20,
     fontWeight: '700',
-    color: '#000',
+    color: '#FFF',
     fontFamily: Fonts.SFProDisplayBold,
   },
   P: {
     fontSize: 14,
     fontWeight: 'normal',
-    color: '#000',
+    color: '#FFF',
     fontFamily: Fonts.SFProTextRegular,
     lineHeight: 20,
   },

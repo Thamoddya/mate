@@ -1,14 +1,13 @@
 import React from 'react';
 import {
-  TouchableOpacity,
-  Text,
   StyleSheet,
-  View,
+  Text,
+  TouchableOpacity,
   TouchableOpacityProps,
+  View,
 } from 'react-native';
 import {Colors} from '../../styles/Colors';
 import {Fonts} from '../../styles/fonts';
-import {ArrowRight} from 'iconsax-react-native'; // Example of importing a specific icon
 
 interface ThemedButtonWithIconProps extends TouchableOpacityProps {
   title: string;
@@ -67,7 +66,7 @@ const styles = StyleSheet.create({
   buttonText: {
     fontSize: 16,
     fontWeight: '500',
-    fontFamily: Fonts.HelveticaNowTextMedium,
+    fontFamily: Fonts.SFProTextMedium,
     marginLeft: 10, // Spacing between the icon and text
   },
   darkButtonText: {

@@ -41,6 +41,10 @@ const transludeStatusBar: NativeStackNavigationOptions = {
   statusBarColor: Colors.PRIMARY_WHITE,
 };
 
+const blackStatusBar: NativeStackNavigationOptions = {
+  statusBarColor: Colors.PRIMARY_BLACK,
+};
+
 interface ScreenConfig {
   name: keyof AppNavigationParams;
   component: React.ComponentType<any>;
@@ -61,6 +65,7 @@ const screens: ScreenConfig[] = [
     component: OnboardScreen,
     options: {
       ...ScreenOptions,
+      ...blackStatusBar,
       statusBarTranslucent: true,
     },
   },
@@ -70,7 +75,11 @@ function App() {
   return (
     <Provider store={store}>
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="Splash">
+        <Stack.Navigator
+          screenOptions={{
+            animation: 'fade',
+          }}
+          initialRouteName="Splash">
           {screens.map(({name, component, options}) => (
             <Stack.Screen
               key={name}

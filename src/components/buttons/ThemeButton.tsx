@@ -1,8 +1,8 @@
 import React from 'react';
 import {
-  TouchableOpacity,
-  Text,
   StyleSheet,
+  Text,
+  TouchableOpacity,
   TouchableOpacityProps,
 } from 'react-native';
 import {Colors} from '../../styles/Colors';
@@ -47,6 +47,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginTop: 20,
+    width: '100%',
   },
   darkButton: {
     backgroundColor: Colors.PRIMARY_BLACK,
@@ -57,7 +58,7 @@ const styles = StyleSheet.create({
   buttonText: {
     fontSize: 16,
     fontWeight: '500',
-    fontFamily: Fonts.HelveticaNowTextMedium,
+    fontFamily: Fonts.SFProTextMedium,
   },
   darkButtonText: {
     color: Colors.PRIMARY_WHITE,
