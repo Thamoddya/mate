@@ -1,7 +1,14 @@
 import React, {useEffect} from 'react';
-import {SafeAreaView, StyleSheet} from 'react-native';
+import {
+  Platform,
+  SafeAreaView,
+  StatusBar,
+  StyleSheet,
+  Text,
+} from 'react-native';
 
-import {ScreenStyles} from '../../styles/AppStyles';
+import {TextStyles} from '../../styles/AppStyles';
+import {Colors} from '../../styles/Colors';
 
 interface SplashScreenProps {
   navigation: any;
@@ -11,21 +18,25 @@ const SplashScreen: React.FC<SplashScreenProps> = ({navigation}) => {
 
   //MARK: useEffect
   useEffect(() => {
+    StatusBar.setBarStyle('dark-content', true);
+    Platform.OS === 'android' &&
+      StatusBar.setBackgroundColor(Colors.PRIMARY_BLACK);
     setTimeout(() => {
       //MARK: Navigation
       if (isLogged) {
         navigation.navigate('BottomTabNavigation');
       } else {
-        navigation.reset({
-          index: 0,
-          routes: [{name: 'Onboard'}],
-        });
+        // navigation.reset({
+        //   index: 0,
+        //   routes: [{name: 'Onboard'}],
+        // });
       }
     }, 3000);
   }, []);
   return (
-    <SafeAreaView
-      style={[ScreenStyles.container, styles.container]}></SafeAreaView>
+    <SafeAreaView style={[styles.container]}>
+      <Text style={[styles.splashText]}>MATE</Text>
+    </SafeAreaView>
   );
 };
 
@@ -35,5 +46,12 @@ const styles = StyleSheet.create({
   container: {
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: Colors.PRIMARY_BLACK,
+    flex: 1,
+  },
+  splashText: {
+    ...TextStyles.H1,
+    color: Colors.PRIMARY_WHITE,
+    fontSize: 40,
   },
 });
