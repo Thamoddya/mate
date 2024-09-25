@@ -5,6 +5,7 @@ import {
 } from '@react-navigation/native-stack';
 import React from 'react';
 import {Provider} from 'react-redux';
+import MainTabNavigator from './src/navigation/MainTabNavigator';
 import SignInScreen from './src/Screens/auth/SignInScreen';
 import SignUpScreen from './src/Screens/auth/SignUpScreen';
 import OnboardScreen from './src/Screens/common/OnboardScreen';
@@ -87,6 +88,15 @@ const screens: ScreenConfig[] = [
       ...ScreenOptions,
       ...blackStatusBar,
       statusBarTranslucent: true,
+    },
+  },
+  {
+    name: 'BottomTabNavigation',
+    component: MainTabNavigator,
+    options: {
+      headerShown: false,
+      headerBackTitleVisible: false,
+      ...disableHeader,
     },
   },
 ];

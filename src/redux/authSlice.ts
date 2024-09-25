@@ -48,16 +48,7 @@ const authSlice = createSlice({
     setConfirmPassword(state, action: PayloadAction<string>) {
       state.confirmPassword = action.payload;
     },
-    signIn(state) {
-      // Here you can add your sign in logic
-      console.log('Sign In');
-      console.log(state);
-    },
-    signUp(state) {
-      // Here you can add your sign up logic
-      console.log('Sign Up');
-      console.log(state);
-    },
+    signIn(state) {},
   },
 });
 
@@ -68,6 +59,7 @@ export const {
   setPassword,
   setEmail,
   setConfirmPassword,
+  signIn,
 } = authSlice.actions;
 
 export default authSlice.reducer;

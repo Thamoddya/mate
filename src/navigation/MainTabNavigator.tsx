@@ -8,8 +8,8 @@ import {AppNavigationParams} from '../types/commonNavigationParams';
 const Tab = createBottomTabNavigator<AppNavigationParams>();
 
 const tabBarOptions = {
-  tabBarActiveTintColor: Colors.PRIMARY_BLACK, // Active label color
-  tabBarInactiveTintColor: Colors.GRAY_500, // Inactive label color
+  tabBarActiveTintColor: Colors.PRIMARY_BLACK,
+  tabBarInactiveTintColor: Colors.GRAY_500,
   tabBarShowLabel: true,
   tabBarStyle: {
     backgroundColor: Colors.PRIMARY_WHITE,

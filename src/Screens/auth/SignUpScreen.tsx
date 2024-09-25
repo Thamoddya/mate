@@ -14,11 +14,13 @@ import {useDispatch, useSelector} from 'react-redux';
 import ThemedButton from '../../components/buttons/ThemeButton';
 import CustomTextInput from '../../components/inputs/CustomTextInput';
 import PasswordInputField from '../../components/inputs/PasswordInputField';
+import {AuthFunctions} from '../../functions/authFunctions';
 import {AppDispatch, RootState} from '../../store/store';
 import {TextStyles} from '../../styles/AppStyles';
 import {Colors} from '../../styles/Colors';
+import {AppNavigationParams} from '../../types/commonNavigationParams';
 
-interface SignUpScreenProps {
+interface SignUpScreenProps extends AppNavigationParams {
   navigation: any;
 }
 
@@ -42,6 +44,8 @@ const SignUpScreen: React.FC<SignUpScreenProps> = ({navigation}) => {
     StatusBar.setTranslucent(true);
   }, [navigation]);
 
+  // MARK: - Functions
+
   return (
     <ImageBackground
       source={require('../../assets/images/bgImg2.png')}
@@ -54,7 +58,7 @@ const SignUpScreen: React.FC<SignUpScreenProps> = ({navigation}) => {
 
         <View style={[styles.secondContainer]}>
           <CustomTextInput
-            placeholder="Eg. John"
+            placeholder="Eg.John"
             keyboardType="default"
             label="First Name"
             value={firstName}
@@ -103,9 +107,7 @@ const SignUpScreen: React.FC<SignUpScreenProps> = ({navigation}) => {
         </View>
         <ThemedButton
           title="Sign Up"
-          onPress={() => {
-            dispatch({type: 'auth/signUp'});
-          }}
+          onPress={() => AuthFunctions.signUpProcess(navigation)}
         />
         <TouchableOpacity
           onPress={() => {
