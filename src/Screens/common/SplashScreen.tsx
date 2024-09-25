@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
-import { SafeAreaView, StyleSheet } from 'react-native';
+import React, {useEffect} from 'react';
+import {SafeAreaView, StyleSheet} from 'react-native';
 
-import { ScreenStyles } from '../../styles/AppStyles';
+import {ScreenStyles} from '../../styles/AppStyles';
 
 interface SplashScreenProps {
   navigation: any;
@@ -24,9 +24,8 @@ const SplashScreen: React.FC<SplashScreenProps> = ({navigation}) => {
     }, 3000);
   }, []);
   return (
-    <SafeAreaView style={[ScreenStyles.container, styles.container]}>
-      {/* <LogoMain /> */}
-    </SafeAreaView>
+    <SafeAreaView
+      style={[ScreenStyles.container, styles.container]}></SafeAreaView>
   );
 };
 
