@@ -8,12 +8,33 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+import UserCard from '../../components/cards/UserCard';
 import {ScreenStyles, TextStyles} from '../../styles/AppStyles';
 import {Colors} from '../../styles/Colors';
 
 interface HomeScreenProps {
   navigation: any;
 }
+
+const testUsers = [
+  {
+    profileImage: 'https://xsgames.co/randomusers/assets/avatars/male/34.jpg',
+    firstName: 'Thamoddya',
+    lastName: 'Rashmitha Dissanayake',
+    isOnline: true,
+    lastSeen: 'Online',
+    lastMessage:
+      'Hello there ! How are you ? Hello there ! How are you ? Hello there ! How are you ? ',
+  },
+  {
+    profileImage: 'https://xsgames.co/randomusers/assets/avatars/male/35.jpg',
+    firstName: 'Jane',
+    lastName: 'Doe',
+    isOnline: false,
+    lastSeen: '1 hour ago',
+    lastMessage: 'Hi',
+  },
+];
 
 const HomeScreen: React.FC<HomeScreenProps> = ({navigation}) => {
   // MARK: - Component
@@ -33,8 +54,18 @@ const HomeScreen: React.FC<HomeScreenProps> = ({navigation}) => {
 
   const MessageView: React.FC = () => {
     return (
-      <View>
-        <Text>Message</Text>
+      <View style={[styles.userCardsView]}>
+        {testUsers?.map((user, index) => (
+          <UserCard
+            firstName={user.firstName}
+            isOnline={user.isOnline}
+            key={index}
+            lastMessage={user.lastMessage}
+            lastSeen={user.lastSeen}
+            lastName={user.lastName}
+            profileImage={user.profileImage}
+          />
+        ))}
       </View>
     );
   };
@@ -72,5 +103,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#000',
     padding: 16,
     flexGrow: 1,
+  },
+  userCardsView: {
+    width: '100%',
+    flexDirection: 'column',
   },
 });
