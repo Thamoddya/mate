@@ -1,5 +1,12 @@
 import React from 'react';
-import {Platform, StyleSheet, Text, TextInput, View} from 'react-native';
+import {
+  Platform,
+  StyleSheet,
+  Text,
+  TextInput,
+  TextInputProps,
+  View,
+} from 'react-native';
 import {Colors} from '../../styles/Colors';
 
 interface CustomTextInputProps {
@@ -8,6 +15,7 @@ interface CustomTextInputProps {
   value: string;
   onChangeText: (text: string) => void;
   keyboardType?: 'default' | 'email-address' | 'numeric' | 'phone-pad';
+  CustomProps?: TextInputProps;
 }
 
 const CustomTextInput: React.FC<CustomTextInputProps> = ({
@@ -16,6 +24,7 @@ const CustomTextInput: React.FC<CustomTextInputProps> = ({
   value,
   onChangeText,
   keyboardType = 'default',
+  CustomProps,
 }) => {
   return (
     <View style={styles.container}>
@@ -28,6 +37,7 @@ const CustomTextInput: React.FC<CustomTextInputProps> = ({
         placeholderTextColor="#888"
         autoCapitalize="none"
         keyboardType={keyboardType}
+        {...CustomProps}
       />
     </View>
   );

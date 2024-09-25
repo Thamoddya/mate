@@ -1,5 +1,5 @@
 import {useFocusEffect} from '@react-navigation/native';
-import React from 'react';
+import React, {useEffect} from 'react';
 import {
   ImageBackground,
   Platform,
@@ -11,14 +11,18 @@ import {
 } from 'react-native';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import {useDispatch, useSelector} from 'react-redux';
-import ThemedButton from '../../../components/buttons/ThemeButton';
-import CustomTextInput from '../../../components/inputs/CustomTextInput';
-import PasswordInputField from '../../../components/inputs/PasswordInputField';
-import {AppDispatch, RootState} from '../../../store/store';
-import {TextStyles} from '../../../styles/AppStyles';
-import {Colors} from '../../../styles/Colors';
+import ThemedButton from '../../components/buttons/ThemeButton';
+import CustomTextInput from '../../components/inputs/CustomTextInput';
+import PasswordInputField from '../../components/inputs/PasswordInputField';
+import {AppDispatch, RootState} from '../../store/store';
+import {TextStyles} from '../../styles/AppStyles';
+import {Colors} from '../../styles/Colors';
 
-const SignInScreen = () => {
+interface SignInScreenProps {
+  navigation: any;
+}
+
+const SignInScreen: React.FC<SignInScreenProps> = ({navigation}) => {
   const dispatch = useDispatch<AppDispatch>();
   const {email, password} = useSelector((state: RootState) => state.auth);
 
@@ -31,10 +35,16 @@ const SignInScreen = () => {
     }, []),
   );
 
+  useEffect(() => {
+    StatusBar.setBarStyle('dark-content');
+    Platform.OS === 'android' && StatusBar.setBackgroundColor('transparent');
+    StatusBar.setTranslucent(true);
+  }, [navigation]);
+
   // MARK: - Render
   return (
     <ImageBackground
-      source={require('../../../assets/images/bgImg1.png')}
+      source={require('../../assets/images/bgImg1.png')}
       style={styles.image}>
       <KeyboardAwareScrollView contentContainerStyle={[styles.safeView]}>
         <Text style={[styles.MainText]}>Welcome Back</Text>
@@ -52,6 +62,10 @@ const SignInScreen = () => {
             onChangeText={(text: string) =>
               dispatch({type: 'auth/setEmail', payload: text})
             }
+            CustomProps={{
+              autoCapitalize: 'none',
+              autoComplete: 'email',
+            }}
           />
           <PasswordInputField
             placeholder="Password"
@@ -68,7 +82,10 @@ const SignInScreen = () => {
             dispatch({type: 'auth/signIn'});
           }}
         />
-        <TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => {
+            navigation.navigate('SignUp');
+          }}>
           <Text style={[styles.subText, {textAlign: 'center', marginTop: 16}]}>
             Don't have an account?{' '}
             <Text style={{color: Colors.PRIMARY_WHITE, fontWeight: 'bold'}}>

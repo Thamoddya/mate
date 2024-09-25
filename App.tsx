@@ -5,7 +5,8 @@ import {
 } from '@react-navigation/native-stack';
 import React from 'react';
 import {Provider} from 'react-redux';
-import SignInScreen from './src/Screens/auth/signIn/SignInScreen';
+import SignInScreen from './src/Screens/auth/SignInScreen';
+import SignUpScreen from './src/Screens/auth/SignUpScreen';
 import OnboardScreen from './src/Screens/common/OnboardScreen';
 import SplashScreen from './src/Screens/common/SplashScreen';
 import {store} from './src/store/store';
@@ -73,6 +74,15 @@ const screens: ScreenConfig[] = [
   {
     name: 'SignIn',
     component: SignInScreen,
+    options: {
+      ...ScreenOptions,
+      ...blackStatusBar,
+      statusBarTranslucent: true,
+    },
+  },
+  {
+    name: 'SignUp',
+    component: SignUpScreen,
     options: {
       ...ScreenOptions,
       ...blackStatusBar,

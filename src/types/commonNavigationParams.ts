@@ -8,6 +8,7 @@ export type AuthNavigationParams = {
   SignIn: undefined;
   VerificationDetails: undefined;
   SignUpSuccess: undefined;
+  SignUp: undefined;
 };
 
 export type AppNavigationRoutes = {
