@@ -5,6 +5,7 @@ import {
 } from '@react-navigation/native-stack';
 import React from 'react';
 import {Provider} from 'react-redux';
+import OnboardScreen from './src/Screens/common/OnboardScreen';
 import SplashScreen from './src/Screens/common/SplashScreen';
 import {store} from './src/store/store';
 import {Colors} from './src/styles/Colors';
@@ -50,6 +51,14 @@ const screens: ScreenConfig[] = [
   {
     name: 'Splash',
     component: SplashScreen,
+    options: {
+      ...ScreenOptions,
+      statusBarTranslucent: true,
+    },
+  },
+  {
+    name: 'Onboard',
+    component: OnboardScreen,
     options: {
       ...ScreenOptions,
       statusBarTranslucent: true,

@@ -1,3 +1,4 @@
+import {useFocusEffect} from '@react-navigation/native'; // Import useFocusEffect
 import React, {useEffect, useRef} from 'react';
 import {
   Animated,
@@ -18,30 +19,41 @@ const SplashScreen: React.FC<SplashScreenProps> = ({navigation}) => {
   const isLogged = false;
   const fadeAnim = useRef(new Animated.Value(0)).current;
 
+  useFocusEffect(
+    React.useCallback(() => {
+      Animated.timing(fadeAnim, {
+        toValue: 0, // Reset opacity before triggering animation again
+        duration: 0,
+        useNativeDriver: true,
+      }).start(() => {
+        Animated.timing(fadeAnim, {
+          toValue: 1,
+          duration: 1500,
+          useNativeDriver: true,
+        }).start();
+      });
+
+      const timeout = setTimeout(() => {
+        if (isLogged) {
+          navigation.navigate('BottomTabNavigation');
+        } else {
+          navigation.reset({
+            index: 0,
+            routes: [{name: 'Onboard'}],
+          });
+        }
+      }, 3000);
+
+      return () => clearTimeout(timeout);
+    }, [navigation]),
+  );
+
   useEffect(() => {
     StatusBar.setBarStyle('dark-content', true);
-    if (Platform.OS == 'android') {
+    if (Platform.OS === 'android') {
       StatusBar.setBackgroundColor(Colors.PRIMARY_BLACK);
     }
-    Animated.timing(fadeAnim, {
-      toValue: 1,
-      duration: 1500,
-      useNativeDriver: true,
-    }).start();
-
-    const timeout = setTimeout(() => {
-      if (isLogged) {
-        navigation.navigate('BottomTabNavigation');
-      } else {
-        // navigation.reset({
-        //   index: 0,
-        //   routes: [{name: 'Onboard'}],
-        // });
-      }
-    }, 3000);
-
-    return () => clearTimeout(timeout);
-  }, [fadeAnim, navigation]);
+  }, []);
 
   return (
     <SafeAreaView style={styles.container}>
