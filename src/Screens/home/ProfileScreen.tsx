@@ -1,3 +1,11 @@
+import {
+  ArrowRight2,
+  Edit2,
+  GlobalRefresh,
+  MusicDashboard,
+  Notification,
+  NotificationStatus,
+} from 'iconsax-react-native';
 import React, {useState} from 'react';
 import {
   Dimensions,
@@ -41,23 +49,14 @@ const ProfileScreen: React.FC<ProfileScreenProps> = ({navigation}) => {
         <ScrollView>
           <View style={styles.profile}>
             <Image
-              alt=""
+              alt="image"
               source={{
-                uri: 'https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2.5&w=256&h=256&q=80',
+                uri: 'https://xsgames.co/randomusers/assets/avatars/male/15.jpg',
               }}
               style={styles.profileAvatar}
             />
             <Text style={styles.profileName}>John Doe</Text>
             <Text style={styles.profileEmail}>john.doe@mail.com</Text>
-            <TouchableOpacity
-              onPress={() => {
-                // handle onPress
-              }}>
-              <View style={styles.profileAction}>
-                <Text style={styles.profileActionText}>Edit Profile</Text>
-                {/* <FeatherIcon color="#fff" name="edit" size={16} /> */}
-              </View>
-            </TouchableOpacity>
           </View>
           <View style={styles.section}>
             <Text style={styles.sectionTitle}>Preferences</Text>
@@ -68,28 +67,40 @@ const ProfileScreen: React.FC<ProfileScreenProps> = ({navigation}) => {
                     // handle onPress
                   }}
                   style={styles.row}>
+                  <View
+                    style={[
+                      styles.rowIcon,
+                      {
+                        backgroundColor: '#007AFF',
+                      },
+                    ]}>
+                    <Edit2 color="#fff" size={20} />
+                  </View>
+                  <Text style={styles.rowLabel}>Update Profile</Text>
+                  <View style={styles.rowSpacer} />
+                  <Text style={styles.rowValue}>English</Text>
+                  <ArrowRight2 color="#C6C6C6" size={20} />
+                </TouchableOpacity>
+              </View>
+              <View style={[styles.rowWrapper, styles.rowFirst]}>
+                <TouchableOpacity
+                  onPress={() => {
+                    // handle onPress
+                  }}
+                  style={styles.row}>
                   <View style={[styles.rowIcon, {backgroundColor: '#fe9400'}]}>
-                    {/* <FeatherIcon
-                      color="#fff"
-                      name="globe"
-                      size={20} /> */}
+                    <GlobalRefresh color="#fff" size={20} />
                   </View>
                   <Text style={styles.rowLabel}>Language</Text>
                   <View style={styles.rowSpacer} />
                   <Text style={styles.rowValue}>English</Text>
-                  {/* <FeatherIcon
-                    color="#C6C6C6"
-                    name="chevron-right"
-                    size={20} /> */}
+                  <ArrowRight2 color="#C6C6C6" size={20} />
                 </TouchableOpacity>
               </View>
               <View style={styles.rowWrapper}>
                 <View style={styles.row}>
                   <View style={[styles.rowIcon, {backgroundColor: '#007AFF'}]}>
-                    {/* <FeatherIcon
-                      color="#fff"
-                      name="moon"
-                      size={20} /> */}
+                    <GlobalRefresh color="#fff" size={20} />
                   </View>
                   <Text style={styles.rowLabel}>Dark Mode</Text>
                   <View style={styles.rowSpacer} />
@@ -106,18 +117,12 @@ const ProfileScreen: React.FC<ProfileScreenProps> = ({navigation}) => {
                   }}
                   style={styles.row}>
                   <View style={[styles.rowIcon, {backgroundColor: '#32c759'}]}>
-                    {/* <FeatherIcon
-                      color="#fff"
-                      name="navigation"
-                      size={20} /> */}
+                    <GlobalRefresh color="#fff" size={20} />
                   </View>
                   <Text style={styles.rowLabel}>Location</Text>
                   <View style={styles.rowSpacer} />
                   <Text style={styles.rowValue}>Los Angeles, CA</Text>
-                  {/* <FeatherIcon
-                    color="#C6C6C6"
-                    name="chevron-right"
-                    size={20} /> */}
+                  <ArrowRight2 color="#C6C6C6" size={20} />
                 </TouchableOpacity>
               </View>
             </View>
@@ -128,10 +133,7 @@ const ProfileScreen: React.FC<ProfileScreenProps> = ({navigation}) => {
                   <View style={styles.row}>
                     <View
                       style={[styles.rowIcon, {backgroundColor: '#38C959'}]}>
-                      {/* <FeatherIcon
-                        color="#fff"
-                        name="at-sign"
-                        size={20} /> */}
+                      <NotificationStatus color="#fff" size={20} />
                     </View>
                     <Text style={styles.rowLabel}>Email Notifications</Text>
                     <View style={styles.rowSpacer} />
@@ -147,10 +149,7 @@ const ProfileScreen: React.FC<ProfileScreenProps> = ({navigation}) => {
                   <View style={styles.row}>
                     <View
                       style={[styles.rowIcon, {backgroundColor: '#38C959'}]}>
-                      {/* <FeatherIcon
-                        color="#fff"
-                        name="bell"
-                        size={20} /> */}
+                      <Notification color="#fff" size={20} />
                     </View>
                     <Text style={styles.rowLabel}>Push Notifications</Text>
                     <View style={styles.rowSpacer} />
@@ -170,24 +169,18 @@ const ProfileScreen: React.FC<ProfileScreenProps> = ({navigation}) => {
                     style={styles.row}>
                     <View
                       style={[styles.rowIcon, {backgroundColor: '#FE3C30'}]}>
-                      {/* <FeatherIcon
-                        color="#fff"
-                        name="music"
-                        size={20} /> */}
+                      <MusicDashboard color="#fff" size={20} />
                     </View>
                     <Text style={styles.rowLabel}>Sound</Text>
                     <View style={styles.rowSpacer} />
                     <Text style={styles.rowValue}>Default</Text>
-                    {/* <FeatherIcon
-                      color="#C6C6C6"
-                      name="chevron-right"
-                      size={20} /> */}
+                    <ArrowRight2 color="#C6C6C6" size={20} />
                   </TouchableOpacity>
                 </View>
               </View>
             </View>
           </View>
-          <Text style={styles.contentFooter}>Made with ❤️ in Thamoddya</Text>
+          <Text style={styles.contentFooter}>By Thamoddya Rashmitha</Text>
         </ScrollView>
       </View>
     </SafeAreaView>
@@ -251,10 +244,7 @@ const styles = StyleSheet.create({
     padding: 16,
     flexDirection: 'column',
     alignItems: 'center',
-    backgroundColor: '#fff',
-    borderTopWidth: 1,
-    borderBottomWidth: 1,
-    borderColor: '#e3e3e3',
+    backgroundColor: Colors.PRIMARY_BLACK,
   },
   profileAvatar: {
     width: 60,
@@ -265,7 +255,7 @@ const styles = StyleSheet.create({
     marginTop: 12,
     fontSize: 20,
     fontWeight: '600',
-    color: '#090909',
+    color: Colors.PRIMARY_WHITE,
   },
   profileEmail: {
     marginTop: 6,
@@ -304,10 +294,10 @@ const styles = StyleSheet.create({
   },
   sectionBody: {
     paddingLeft: 24,
-    backgroundColor: '#fff',
+    backgroundColor: Colors.PRIMARY_BLACK,
     borderTopWidth: 1,
     borderBottomWidth: 1,
-    borderColor: '#e3e3e3',
+    borderColor: Colors.GRAY_800,
   },
   /** Row */
   row: {
@@ -319,7 +309,7 @@ const styles = StyleSheet.create({
   },
   rowWrapper: {
     borderTopWidth: 1,
-    borderColor: '#e3e3e3',
+    borderColor: Colors.GRAY_800,
   },
   rowFirst: {
     borderTopWidth: 0,
@@ -335,7 +325,7 @@ const styles = StyleSheet.create({
   rowLabel: {
     fontSize: 17,
     fontWeight: '500',
-    color: '#000',
+    color: Colors.PRIMARY_WHITE,
   },
   rowSpacer: {
     flexGrow: 1,
