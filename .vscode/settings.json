@@ -1,5 +1,10 @@
 {
     "cSpell.words": [
         "Pressable"
+    ],
+    "cSpell.language": "en,en-US,lorem,en-GB",
+    "cSpell.enableFiletypes": [
+        "!java",
+        "!swift"
     ]
 }

@@ -19,7 +19,7 @@ import {
   View,
 } from 'react-native';
 import {ScreenStyles, TextStyles} from '../../styles/AppStyles';
-import {Colors} from '../../styles/Colors';
+import Colors from '../../styles/Colors';
 
 interface ProfileScreenProps {
   navigation: any;
@@ -78,7 +78,6 @@ const ProfileScreen: React.FC<ProfileScreenProps> = ({navigation}) => {
                   </View>
                   <Text style={styles.rowLabel}>Update Profile</Text>
                   <View style={styles.rowSpacer} />
-                  <Text style={styles.rowValue}>English</Text>
                   <ArrowRight2 color="#C6C6C6" size={20} />
                 </TouchableOpacity>
               </View>

@@ -3,7 +3,7 @@ import {Home2, Profile} from 'iconsax-react-native';
 import React from 'react';
 import HomeScreen from '../Screens/home/HomeScreen';
 import ProfileScreen from '../Screens/home/ProfileScreen';
-import {Colors} from '../styles/Colors';
+import Colors from '../styles/Colors';
 import {AppNavigationParams} from '../types/commonNavigationParams';
 
 const Tab = createBottomTabNavigator<AppNavigationParams>();

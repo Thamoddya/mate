@@ -1,9 +1,9 @@
 import React from 'react';
-import {View, ActivityIndicator, StyleSheet} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import {useSelector} from 'react-redux';
-import {RootState} from '../../store/store';
-import {Colors} from '../../styles/Colors';
 import LogoSmallWhite from '../../assets/images/LogoSmallWhite';
+import {RootState} from '../../store/store';
+import Colors from '../../styles/Colors';
 
 const LoadingIndicator = () => {
   const loading = useSelector((state: RootState) => state.loading.loading);

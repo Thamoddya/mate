@@ -17,7 +17,7 @@ import PasswordInputField from '../../components/inputs/PasswordInputField';
 import {AuthFunctions} from '../../functions/authFunctions';
 import {AppDispatch, RootState} from '../../store/store';
 import {TextStyles} from '../../styles/AppStyles';
-import {Colors} from '../../styles/Colors';
+import Colors from '../../styles/Colors';
 
 interface SignInScreenProps {
   navigation: any;

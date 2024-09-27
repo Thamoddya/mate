@@ -9,7 +9,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import {Colors} from '../../styles/Colors';
+import Colors from '../../styles/Colors';
 
 interface PasswordInputFieldProps {
   placeholder: string;

@@ -7,7 +7,7 @@ import {
   TextInputProps,
   View,
 } from 'react-native';
-import {Colors} from '../../styles/Colors';
+import Colors from '../../styles/Colors';
 
 interface CustomTextInputProps {
   label: string;

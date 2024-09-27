@@ -6,7 +6,7 @@ import {
   TouchableOpacityProps,
   View,
 } from 'react-native';
-import {Colors} from '../../styles/Colors';
+import Colors from '../../styles/Colors';
 import {Fonts} from '../../styles/fonts';
 
 interface ThemedButtonWithIconProps extends TouchableOpacityProps {

@@ -11,7 +11,7 @@ import SignUpScreen from './src/Screens/auth/SignUpScreen';
 import OnboardScreen from './src/Screens/common/OnboardScreen';
 import SplashScreen from './src/Screens/common/SplashScreen';
 import {store} from './src/store/store';
-import {Colors} from './src/styles/Colors';
+import Colors from './src/styles/Colors';
 import {AppNavigationParams} from './src/types/commonNavigationParams';
 
 const Stack = createNativeStackNavigator<AppNavigationParams>();

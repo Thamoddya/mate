@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import UserCard from '../../components/cards/UserCard';
 import {ScreenStyles, TextStyles} from '../../styles/AppStyles';
-import {Colors} from '../../styles/Colors';
+import Colors from '../../styles/Colors';
 
 interface HomeScreenProps {
   navigation: any;

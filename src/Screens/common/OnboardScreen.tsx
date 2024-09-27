@@ -12,7 +12,7 @@ import {
 import ActionSheet, {ActionSheetRef} from 'react-native-actions-sheet';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {ScreenStyles, TextStyles} from '../../styles/AppStyles';
-import {Colors} from '../../styles/Colors';
+import Colors from '../../styles/Colors';
 
 interface OnboardScreenProps {
   navigation: any;
@@ -34,7 +34,7 @@ const OnboardScreen: React.FC<OnboardScreenProps> = ({navigation}) => {
     return (
       <ActionSheet
         indicatorStyle={{
-          backgroundColor: 'rgba(255, 255, 255, 0.30)',
+          backgroundColor: Colors.GRAY_500,
           marginTop: 20,
         }}
         gestureEnabled={true}
@@ -52,7 +52,7 @@ const OnboardScreen: React.FC<OnboardScreenProps> = ({navigation}) => {
         elevation={0}
         statusBarTranslucent={true}
         containerStyle={{
-          backgroundColor: 'rgba(25, 25, 25, 0.60)',
+          backgroundColor: Colors.BG_DARK,
           height: Dimensions.get('window').height / 2,
         }}
         ref={actionSheetRef}>

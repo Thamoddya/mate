@@ -1,5 +1,5 @@
 import {Dimensions, StyleSheet} from 'react-native';
-import {Colors} from './Colors';
+import Colors from './Colors';
 import {Fonts} from './fonts';
 
 export const ScreenStyles = StyleSheet.create({

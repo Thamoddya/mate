@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 
 import {TextStyles} from '../../styles/AppStyles';
-import {Colors} from '../../styles/Colors';
+import Colors from '../../styles/Colors';
 
 interface SplashScreenProps {
   navigation: any;
