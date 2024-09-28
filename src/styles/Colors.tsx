@@ -1,4 +1,4 @@
-let isDark = false;
+let isDark = true;
 const ColorsDark = {
   PRIMARY_BLACK: '#1E1E1E',
   PRIMARY_WHITE: '#FFFFFF',
